@@ -1,0 +1,323 @@
+/* set element styles to fit tablet and higher(desktop) */
+@media screen and (min-width: 600px) {
+	.header {
+		z-index: 1;
+	}
+	.header .logo {
+		display: none;
+	}
+	.nav-trigger {
+		display: none;
+	}
+	.nav-trigger span, .nav-trigger span:before, span:after {
+		background-color: #fff;
+	}
+	.side-nav {
+		display: block;
+		width: 70px;
+		z-index: 2;
+	}
+	.side-nav .logo {
+		padding-top: 15px;
+	}
+	.logo-svg {
+		width: 120px;
+	}
+	.side-nav ul li span:nth-child(2) {
+		display: none;
+	}
+	.side-nav .logo {
+		display: block;
+	}
+	.side-nav ul li i {
+		font-size: 24px;
+	}
+	.side-nav ul li a {
+		text-align: center;
+	}
+	.main-content {
+		margin-left: 70px;
+	}
+	.ops-trigger {
+		display: none;
+	}
+	.header-content {
+		margin-left: 70px;
+	}
+}
+/* set element styles for desktop */
+@media screen and (min-width: 800px) {
+	.side-nav {
+		width: 150px;
+	}
+	.side-nav ul li span:nth-child(2) {
+		display: block;
+	}
+	.side-nav ul li i {
+		font-size: 24px;
+	}
+	.side-nav ul li a {
+		text-align: center;
+	}
+	.main-content {
+		margin-left: 150px;
+	}
+	.header-content {
+		margin-left: 150px;
+	}
+}
+
+/*max-width*/
+
+@media (max-width: 1199px) {
+	.account-checker-descr {
+		margin-top: 10px;
+	}
+	.transactions-filter .col-lg-4 {
+		margin-bottom: 30px;
+	}
+	.transaction-list .panel-body {
+		padding-left: 15px;
+	}
+	.transaction-list {
+		text-align: center;
+	}
+	.transaction-list .panel-heading [class*="col-"] {
+		margin-bottom: 5px;
+	}
+	.transaction-list .panel-body [class*="col-"] {
+		margin-bottom: 20px;
+	}
+	.transaction-list__body {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.account-left {
+		padding: 55px 10px 0;
+		text-align: center;
+	}
+	.account-right {
+		text-align: center;
+	}
+	.security-content-header__center .col-lg-offset-1 {
+		padding-left: 15px;
+	}
+	.api-store-header__left {
+		text-align: center;
+	}
+	.add-logo {
+		margin-bottom: 30px;
+	}
+	.store-data .col-sm-6 {
+		margin-bottom: 20px;
+	}
+	.ticket-list__panel-title {
+		display: none;
+	}
+	.tickets-list [class *= "col-lg-"] {
+		text-align: left;
+		padding: 5px;
+	}
+	.tickets-list__label {
+		position: relative;
+	}
+	.tickets-list__label:before {
+		content: 'Messages';
+		display: inline-block;
+		background-color: #607d8b;
+		padding: 5px 10px;
+		border-radius: 20px;
+		margin-right: 15px;
+		margin-left: 5px;
+		text-align: left;
+		color: #fff;
+		font-size: 12px;
+	}
+	.tickets-list__date:before {
+		content: 'Date';
+	}
+	.tickets-list__subject:before {
+		content: 'Subject';
+	}
+	.tickets-list__messages:before {
+		content: 'Messages';
+	}
+	.tickets-list__status:before {
+		content: 'Status';
+	}
+	.tickets-list__trash:before {
+		content: 'Action';
+	}
+	.tickets-list__trash {
+		text-align: left;
+	}
+	.tickets-list__trash a {
+		display: inline-block;
+	}
+	.tickets-list .panel-default {
+		border-bottom: 2px solid #607d8b;
+	}
+	.ticket-list-msg__date {
+		padding-left: 20px;
+	}
+	.ticket-list-send__btn {
+		margin-top: 20px;
+	}
+	.tickets-list__label {
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	.tickets-list__messages,
+	.tickets-list__action,
+	.tickets-list__status {
+		text-align: left;
+	}
+}
+
+
+@media (max-width: 991px) {
+	.ops-trigger {
+		display: inline-block;
+	}
+	.header-content {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin-left: 0;
+		background-color: #184c65;
+		padding-top: 60px;
+		width: 100%;
+		height: 100vh;
+	}
+	.header__btn {
+		text-align: center;
+		margin-bottom: 25px;
+		margin-top: 15px;
+	}
+	.header__btn .btn {
+		width: 50%;
+	}
+	.header__balance {
+		margin-top: 25px;
+		background-color: #184c65;
+		color: #fff;
+	}
+	.header-content .has-feedback {
+		width: 50%;
+		margin: 25px auto;
+	}
+	.select-lang {
+		background-color: #184c65;
+	}
+	.header-content.visible {
+		display: block;
+		padding-left: 135px;
+	}
+	.navTrigger {
+		display: block;
+	}
+
+}
+
+@media (max-width: 799px) {
+	.header-content.visible {
+		padding-left: 65px;
+	}
+	.logo-svg {
+		width: 168px;
+	}
+	.side-nav .logo {
+		padding-top: 12px;
+		padding-left: 14px;
+	}
+	.logo-svg text {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) {
+	.account-checker{
+		background-color: transparent;
+	}
+	.security-header__save-btn {
+		margin-bottom: 35px;
+	}
+	.amount-description {
+		text-align: center;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.input-white--with-equalent:after {
+		content: '';
+	}
+}
+
+@media (max-width: 599px) {
+	.header .logo {
+		background-image: none;
+		width: 50px;
+		overflow: hidden;
+		margin-left: 10px;
+		padding-top: 10px;
+	}
+	.logo-svg {
+		width: 168px;
+	}
+	.header__btn .btn {
+		width: 100%;
+	}
+	.header-content .has-feedback {
+		width: 100%;
+	}
+	.modal-header,
+	.modal-body,
+	.modal-footer,
+	.modal-body-content {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.select-wallet:before {
+		content: ' ';
+	}
+	.wallet-info__key--with-icon {
+		padding-right: 50px;
+		position: relative;
+	}
+	.wallet-info__key--with-icon a {
+		display: block;
+		position: absolute;
+		top: 8px;
+		right: 15px;
+	}
+	.header-content.visible {
+		padding-left: 0;
+	}
+	.ops-trigger {
+		display: block;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	.wallet-center__value {
+		font-size: 42px;
+	}
+	.wallet-center__value span {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 375px) {
+	.security-content {
+		padding: 65px 10px;
+	}
+	.ticket-list-send__btn .btn {
+		width: 100%;
+	}
+}
+@media (max-width: 374px) {
+	.wallet-center__value {
+		font-size: 32px;
+		font-weight: 400;
+	}
+}

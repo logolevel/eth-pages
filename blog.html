@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blockether</title>
+
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,500,500i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link href="libs/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="libs/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="libs/checkbox-style/build.css" rel="stylesheet">
+    <link href="libs/selectpicker/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="libs/owl/css/owl.carousel.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="libs/ladda/css/ladda-themeless.min.css">
+    <link href="css/site-style.css" rel="stylesheet">
+    <link href="css/site-media.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Start hidden blocks -->
+
+    <!-- Start log-in modal -->
+    <div id="logInModal" class="s-modal modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <form action="#!">
+                    <div class="modal-body">
+                    <div class="modal-title">Login to Account</div>
+                    <div class="form-group">
+                        <label for="email2">Login (Email)</label>
+                        <input type="text" class="form-control" id="email2">
+                    </div>
+                    <div class="form-group">
+                        <label for="pass2">Password</label>
+                        <input type="password" class="form-control" id="pass2">
+                    </div>
+                    <div class="remember-login">
+                        <div class="checkbox checkbox-primary">
+                            <input type="checkbox" id="radio-remember" value="option-remember" checked>
+                            <label for="radio-remember">Remember me</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="sign-up-button login-button">
+                                <button type="submit" class="btn btn-blue">Login</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="login-forgon-pass">
+                                <a href="#!">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reg-new-account"><a href="#!">Register new account</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Stop log-in modal -->
+
+    <!-- Start sign-up modal -->
+    <div id="signUpModal" class="s-modal modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <form action="#!">
+                    <div class="modal-body">
+                        <div class="modal-title">Sign Up</div>
+                        <div class="form-group">
+                            <label for="user">Username</label>
+                            <input type="text" class="form-control" id="user">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pass">Password</label>
+                                    <input type="password" class="form-control" id="pass">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pass-confirm">Confirm</label>
+                                    <input type="password" class="form-control" id="pass-confirm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sign-up-conditions">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <span>By creating an account, you agree with the <a href="#!">Terms and Conditions</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sign-up-button">
+                            <button type="submit" class="btn btn-blue">Sign Up</button>
+                        </div>
+                        <div class="have-account">Already have an account? <a href="#!">Sign In</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Stop sign-up modal -->
+
+    <!-- Stop hidden blocks -->
+
+    <!-- Start s-header -->
+    <div class="s-blog-header">
+        <div class="container">
+            <div class="navbar s-header-navbar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <div class="navTrigger" data-toggle="collapse" data-target="#responsive-menu">
+                            <i></i><i></i><i></i>
+                        </div>
+                        <a href="#!" class="navbar-brand">
+                            <img src="img/s-logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="responsive-menu">
+                        <div class="navbar-form navbar-right s-header__sign">
+                            <a href="#!" class="btn btn-transparent" data-toggle="modal" data-target="#logInModal">Log In</a>
+                            <a href="#!" class="btn s-btn-small btn-blue" data-toggle="modal" data-target="#signUpModal">Sign up</a>
+                            <select class="selectpicker select-language">
+                                <option data-icon="flag-icon flag-icon-en">English</option>
+                                <option data-icon="flag-icon flag-icon-ru">Russian</option>
+                                <option data-icon="flag-icon flag-icon-de">Germany</option>
+                            </select>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li><a href="main.html">Start</a></li>
+                            <li><a href="#">API Docs</a></li>
+                            <li><a href="help.html">FAQ</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="s-blog-header__title">
+                <h1 class="s-blog-header__big">READ OUR BLOG</h1>
+                <h2 class="s-blog-header__small">etheris publication</h2>
+            </div>
+        </div>
+    </div>
+    <!-- Stop s-header -->
+
+    <!-- Start blog -->
+    <div class="blog">
+        <div class="container">
+            <div class="blog-content">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="blog-post__wrap">
+                            <div class="blog-post__item">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img src="img/image/blog-post-1.jpg" alt="" class="blog-post__photo">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="blog-post__content">
+                                            <h3 class="blog-post__title">Start managing the most exciting currency in the world!</h3>
+                                            <p class="blog-post__preview-text">We are glad to welcome you on our service! Our team has developed an excellent tool for using ETHER for personal and business purposes. We are very loyal to our users and the idea of anonymity is our priority...</p>
+                                            <div class="blog-post__footer">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <span class="blog-post__footer-date">02 Nov 2017</span>
+                                                    </div>
+                                                    <div class="col-xs-6 blog-post__footer-read">
+                                                        <a href="#!" class="btn s-btn-small btn-blue ladda-button" data-style="expand-left"><span class="ladda-label">Read more</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-post__item">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img src="img/image/blog-post-1.jpg" alt="" class="blog-post__photo">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="blog-post__content">
+                                            <h3 class="blog-post__title">Start managing the most exciting currency in the world!</h3>
+                                            <p class="blog-post__preview-text">We are glad to welcome you on our service! Our team has developed an excellent tool for using ETHER for personal and business purposes. We are very loyal to our users and the idea of anonymity is our priority...</p>
+                                            <div class="blog-post__footer">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <span class="blog-post__footer-date">02 Nov 2017</span>
+                                                    </div>
+                                                    <div class="col-xs-6 blog-post__footer-read">
+                                                        <a href="#!" class="btn s-btn-small btn-blue">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-post__item">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img src="img/image/blog-post-1.jpg" alt="" class="blog-post__photo">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="blog-post__content">
+                                            <h3 class="blog-post__title">Start managing the most exciting currency in the world!</h3>
+                                            <p class="blog-post__preview-text">We are glad to welcome you on our service! Our team has developed an excellent tool for using ETHER for personal and business purposes. We are very loyal to our users and the idea of anonymity is our priority...</p>
+                                            <div class="blog-post__footer">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <span class="blog-post__footer-date">02 Nov 2017</span>
+                                                    </div>
+                                                    <div class="col-xs-6 blog-post__footer-read">
+                                                        <a href="#!" class="btn s-btn-small btn-blue">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-post__item">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img src="img/image/blog-post-1.jpg" alt="" class="blog-post__photo">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="blog-post__content">
+                                            <h3 class="blog-post__title">Start managing the most exciting currency in the world!</h3>
+                                            <p class="blog-post__preview-text">We are glad to welcome you on our service! Our team has developed an excellent tool for using ETHER for personal and business purposes. We are very loyal to our users and the idea of anonymity is our priority...</p>
+                                            <div class="blog-post__footer">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <span class="blog-post__footer-date">02 Nov 2017</span>
+                                                    </div>
+                                                    <div class="col-xs-6 blog-post__footer-read">
+                                                        <a href="#!" class="btn s-btn-small btn-blue">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-post__item">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img src="img/image/blog-post-1.jpg" alt="" class="blog-post__photo">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="blog-post__content">
+                                            <h3 class="blog-post__title">Start managing the most exciting currency in the world!</h3>
+                                            <p class="blog-post__preview-text">We are glad to welcome you on our service! Our team has developed an excellent tool for using ETHER for personal and business purposes. We are very loyal to our users and the idea of anonymity is our priority...</p>
+                                            <div class="blog-post__footer">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <span class="blog-post__footer-date">02 Nov 2017</span>
+                                                    </div>
+                                                    <div class="col-xs-6 blog-post__footer-read">
+                                                        <a href="#!" class="btn s-btn-small btn-blue">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-pagination__wrap">
+                            <ul class="pagination blog-pagination">
+                                <li class="active blog-pagination__first-link"><a href="#!">1</a></li>
+                                <li><a href="#!">2</a></li>
+                                <li><a href="#!">3</a></li>
+                                <li class="pag-ellipsis"><a href="#!">...</a></li>
+                                <li><a href="#!"><i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-aside">
+                            <div class="blog-subscribe__block">
+                                <div class="blog-subscribe__btn-signup">
+                                    <a href="#!" class="btn btn-white">Sign up</a>
+                                </div>
+                                <div class="blog-subscribe__or">
+                                    <p>or</p>
+                                    <p>SUBSCRIBE TO OUR NEWSLETTER</p>
+                                </div>
+                                <div class="blog-subscribe__input">
+                                    <div class="form-subscribe">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Enter email address">
+                                            <span class="input-group-addon"><button type="submit" class="btn ladda-button" data-style="expand-left" data-spinner-color="#4068ff"><span class="ladda-label">Subscribe</span></button></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-tweets__block">
+                                <div class="blog-tweets__title"><span>Recent tweets</span>by<a href="#!"><i>@etheriswallet</i></a></div>
+                                <div class="blog-tweets__item">
+                                    <p class="blog-tweets__text"><span>Find out what you need to know about iOS 11 from Mixpanel's @davep</span><a href="#!" class="blog-tweets__link">https://t.co/nn63vCALyC</a></p>
+                                    <p class="blog-tweets__date">-2 hours ago</p>
+                                </div>
+                                <div class="blog-tweets__item">
+                                    <p class="blog-tweets__text"><span>If you're at #MWCA17, there's still time to check out our product metrics session with @Logitech:…</span><a href="#!" class="blog-tweets__link">https://t.co/nn63vCALyC</a></p>
+                                    <p class="blog-tweets__date">-2 hours ago</p>
+                                </div>
+                                <div class="blog-tweets__item">
+                                    <p class="blog-tweets__text"><span>RT @growwithbamboo: Looking forward to checking out "Tracking Metrics that Matter" today @ #MWCA17 by @mixpanel's Jessica Wang.</span><a href="#!" class="blog-tweets__link">https://t.co/nn63vCALyC</a></p>
+                                    <p class="blog-tweets__date">-2 hours ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End blog -->
+
+    <!-- Start s-footer -->
+    <footer class="s-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="s-footer-left">
+                        <div class="s-footer__logo">
+                            <img src="img/s-logo.png" alt="">
+                        </div>
+                        <div class="s-footer__copyright">© 2017 | All rights reserved</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="s-footer-center">
+                        <div class="s-footer__menu">
+                            <a href="#!">Start</a>
+                            <a href="#!">API Docs</a>
+                            <a href="#!">FAQ</a>
+                            <a href="#!">Blog</a>
+                            <a href="#!">Conacts</a>
+                        </div>
+                        <div class="s-footer__support">support@blockether.io</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="s-footer__right">
+                        <div class="s-footer__lang">
+                            <select class="selectpicker select-language">
+                                <option data-icon="flag-icon flag-icon-en">English</option>
+                                <option data-icon="flag-icon flag-icon-ru">Russian</option>
+                                <option data-icon="flag-icon flag-icon-de">Germany</option>
+                            </select>
+                        </div>
+                        <div class="s-footer__social">
+                            <a href="#!"><i class="fa fa-twitter"></i></a>
+                            <a href="#!"><i class="fa fa-facebook-official"></i></a>
+                            <a href="#!"><i class="fa fa-linkedin-square"></i></a>
+                            <a href="#!"><i class="fa fa-paper-plane"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Stop s-footer -->
+
+    <!-- Start s-footer-bottom -->
+    <div class="s-footer-bottom">
+        <div class="container">
+            <p>The use of this site is subject to certain Terms of Use, which constitute a legal agreement between you and Blockether.io. By using, accessing or browsing this web site in any way, you acknowledge that you have read, understood, and agree to be bound by the Terms of Use. Please review the Terms of Use, and if you do not agree to the terms, do not use this web site. </p>
+        </div>
+    </div>
+    <!-- Stop s-footer-bottom -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/selectpicker/js/bootstrap-select.min.js"></script>
+    <script src="libs/owl/js/owl.carousel.min.js"></script>
+    <script src="libs/ladda/js/spin.min.js"></script>
+    <script src="libs/ladda/js/ladda.min.js"></script>
+    <script src="js/site-scripts.js"></script>
+
+</body>
+</html>

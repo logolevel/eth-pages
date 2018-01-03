@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blockether</title>
+
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,500,500i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link href="libs/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="libs/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="libs/checkbox-style/build.css" rel="stylesheet">
+    <link href="libs/selectpicker/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="libs/owl/css/owl.carousel.min.css" rel="stylesheet" >
+    <link href="css/site-style.css" rel="stylesheet">
+    <link href="css/site-media.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Start hidden blocks -->
+
+    <!-- Start log-in modal -->
+    <div id="logInModal" class="s-modal modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <form action="#!">
+                    <div class="modal-body">
+                    <div class="modal-title">Login to Account</div>
+                    <div class="form-group">
+                        <label for="email2">Login (Email)</label>
+                        <input type="text" class="form-control" id="email2">
+                    </div>
+                    <div class="form-group">
+                        <label for="pass2">Password</label>
+                        <input type="password" class="form-control" id="pass2">
+                    </div>
+                    <div class="remember-login">
+                        <div class="checkbox checkbox-primary">
+                            <input type="checkbox" id="radio-remember" value="option-remember" checked>
+                            <label for="radio-remember">Remember me</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="sign-up-button login-button">
+                                <button type="submit" class="btn btn-blue">Login</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="login-forgon-pass">
+                                <a href="#!">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reg-new-account"><a href="#!">Register new account</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Stop log-in modal -->
+
+    <!-- Start sign-up modal -->
+    <div id="signUpModal" class="s-modal modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <form action="#!">
+                    <div class="modal-body">
+                        <div class="modal-title">Sign Up</div>
+                        <div class="form-group">
+                            <label for="user">Username</label>
+                            <input type="text" class="form-control" id="user">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pass">Password</label>
+                                    <input type="password" class="form-control" id="pass">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pass-confirm">Confirm</label>
+                                    <input type="password" class="form-control" id="pass-confirm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sign-up-conditions">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <span>By creating an account, you agree with the <a href="#!">Terms and Conditions</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sign-up-button">
+                            <button type="submit" class="btn btn-blue">Sign Up</button>
+                        </div>
+                        <div class="have-account">Already have an account? <a href="#!">Sign In</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Stop sign-up modal -->
+
+    <!-- Stop hidden blocks -->
+
+    <!-- Start s-header -->
+    <div class="s-header s-header--not-found bg-image">
+        <div class="container">
+            <div class="navbar s-header-navbar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <div class="navTrigger" data-toggle="collapse" data-target="#responsive-menu">
+                            <i></i><i></i><i></i>
+                        </div>
+                        <a href="#!" class="navbar-brand">
+                            <img src="img/s-logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="responsive-menu">
+                        <div class="navbar-form navbar-right s-header__sign">
+                            <a href="#!" class="btn btn-transparent" data-toggle="modal" data-target="#logInModal">Log In</a>
+                            <a href="#!" class="btn s-btn-small btn-blue" data-toggle="modal" data-target="#signUpModal">Sign up</a>
+                            <select class="selectpicker select-language">
+                                <option data-icon="flag-icon flag-icon-en">English</option>
+                                <option data-icon="flag-icon flag-icon-ru">Russian</option>
+                                <option data-icon="flag-icon flag-icon-de">Germany</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="s-header__not-found">
+                        <p class="s-header__not-found-text">Sorry, page not found</p>
+                        <h1 class="s-header__not-found-value">404</h1>
+                    </div>
+                    <div class="s-header__big-btn s-header__big-btn--not-found">
+                        <a href="#!" class="btn btn-blue">Main page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Stop s-header -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/selectpicker/js/bootstrap-select.min.js"></script>
+    <script src="libs/owl/js/owl.carousel.min.js"></script>
+    <script src="js/site-scripts.js"></script>
+
+</body>
+</html>

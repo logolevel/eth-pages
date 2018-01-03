@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blockether</title>
+
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500i" rel="stylesheet">
+    <link href="libs/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="libs/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="libs/checkbox-style/build.css" rel="stylesheet">
+    <link href="libs/selectpicker/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="libs/bootstrap-slider/css/bootstrap-slider.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="libs/ladda/css/ladda-themeless.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Start hidden blocks -->
+
+    <!-- Start Edit Wallet -->
+    <div id="editWallet" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Wallet</h4>
+                </div>
+                <form action="#!">
+                    <div class="modal-body">
+                        <div class="form-group input-white">
+                            <label for="account1">New Name</label>
+                            <input type="password" id="account1" class="form-control" placeholder="For example: My saving wallet">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-blue" data-dismiss="modal">Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Edit Wallet -->
+
+    <!-- Start Create Account -->
+    <div id="createAccount" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create Account</h4>
+                </div>
+                <form action="#!">
+                    <div class="modal-body">
+                        <div class="form-group input-white">
+                            <label for="account1">Enter password</label>
+                            <input type="password" id="account1" class="form-control">
+                            <button type="button" class="input-eye-btn"><i class="fa input-eye-btn__icon"></i></button>
+                        </div>
+                        <div class="form-group input-white">
+                            <label for="account1">Repeat password</label>
+                            <input type="password" id="account1" class="form-control">
+                            <button type="button" class="input-eye-btn"><i class="fa input-eye-btn__icon"></i></button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-blue" data-dismiss="modal">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Create Account -->
+
+    <!-- Start Send Funds -->
+    <div id="sendFunds" class="modal fade modal-send" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-life-ring"></i>Send Funds</h4>
+                </div>
+                <form action="#!">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="sendFunds1">From</label>
+                            <div class="drop-list select-account">
+                                <div class="dropdown">
+                                    <button class="btn btn-transparent-white dropdown-toggle double-field" type="button" data-toggle="dropdown">
+                                        <div class="double-left truncate">Main accountsssssssssssssssssssssssssssssssssssssssssssssdddddddddddd</div>
+                                        <div class="double-right">(0.000073 Eth)</div>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#!" class="double-field">
+                                                <div class="double-left truncate">Main accountsssssssssssssssssssssssssssssssssssssssssssssdddddddddddd</div>
+                                                <div class="double-right">(0.000073 Eth)</div>
+                                            </a>
+                                        </li>
+                                        <li><a href="#!" class="double-field">
+                                                <div class="double-left truncate">Account 2</div>
+                                                <div class="double-right">(0 Eth)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group input-white">
+                            <label for="sendFunds2">To</label>
+                            <input type="text" id="sendFunds2" class="form-control" placeholder="0x0000000...">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group input-white">
+                                    <label for="sendFunds3">Amount</label>
+                                    <input type="text" id="sendFunds3" class="form-control" placeholder="0.00">
+                                </div>
+                                <div class="checkbox checkbox-primary">
+                                    <input type="checkbox" id="radio-1" value="option-1" checked>
+                                    <label for="radio-1">Send everything</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="amount-description">You want to send <span>0 Ether</span></div>
+                            </div>
+                        </div>
+                        <div class="row fee-wrap">
+                            <div class="col-sm-6">
+                                <div class="fee-title">Select fee</div>
+                                <div class="fee">
+                                    <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="2" data-slider-step="1" data-slider-value="1"/>
+                                    <div class="clearfix">
+                                        <label class="slider-label">Cheaper</label>
+                                        <label class="slider-label slider-label--right">Faster</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="fee-description">This is the most amount of money that might be used to process this transaction. Your transaction will be mined in a <span>few minutes or more</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body-fluid">
+                        <div class="modal-body-content">
+                            <div class="send-total">
+                                <div class="send-total__title">Total</div>
+                                <div class="send-total__value">0.000147007 <span>Ether</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-blue" data-dismiss="modal">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Send Funds -->
+
+    <!-- Start Receive Funds -->
+    <div id="receiveFunds" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-arrow-circle-up"></i>Receive Funds</h4>
+                </div>
+                <form action="#!">
+                    <div class="modal-body">
+                        <div class="input-group-label">Amount, ETH</div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group input-white input-white--with-wallet">
+                                    <input type="number" id="ticket1" class="form-control" value="1">
+                                    <span class="input-wallet-name">Eth</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group input-white input-white--with-wallet input-white--with-equalent">
+                                    <input type="number" id="ticket2" class="form-control" value="250">
+                                    <span class="input-wallet-name">Usd</span>
+                                </div>
+                            </div>
+                           <!--  <div class="col-sm-6">
+                                <div class="form-group input-white select-wallet">
+                                    <select class="selectpicker">
+                                        <option>USD 250</option>
+                                        <option>USD 520</option>
+                                        <option>USD 320</option>
+                                    </select>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="account-checker--white drop-checker">
+                            <div class="dropdown">
+                                <button class="btn btn-transparent-white dropdown-toggle" type="button" data-toggle="dropdown">
+                                <span>Main account (ETHERBASE)</span>
+                                <span class="caret"></span>
+                                <div class="account-checker__key truncate"><i class="fa fa-key"></i>0x3305674797659e1E351641600808543c36A4625d</div>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#!">
+                                        <span>Account 2</span>
+                                        <div class="account-checker__key truncate"><i class="fa fa-key"></i>0x222222222222222222222222222222222222222</div>
+                                    </a></li>
+                                    <li><a href="#!">
+                                        <span>Main account (ETHERBASE)</span>
+                                        <div class="account-checker__key truncate"><i class="fa fa-key"></i>0x3305674797659e1E351641600808543c36A4625d</div>
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="wallet-info__key wallet-info__key--with-icon truncate">
+                            <span>0x3305674797659e1E351641600808543c36A4625d</span>
+                            <a href="#!"><i class="fa fa-copy"></i></a>
+                        </div>
+                        <div class="view-qr__btn">
+                            <a href="#!">View QR code</a>
+                        </div>
+                        <div class="wallet-info__qr-code wallet-info__qr-code--receive">
+                            <img src="img/qrcode.png" alt="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-blue" data-dismiss="modal">Receive</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Receive Funds -->
+    
+    <!-- End hidden blocks -->
+
+    <!-- Start header -->
+    <div class="header">
+        <a href="#!" class="logo logo-svg-wrap">
+            <svg class="logo-svg" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 323.95 74.98">
+                <rect x="8.25" y="61.6" width="52" height="52" rx="2.59" ry="2.59" transform="translate(74.92 -48.38) rotate(45)"/>
+                <path d="M34.31,51.5l13,43.64a.85.85,0,0,1-1,1l-48-9L21.13,74Z" transform="translate(2.95 -49.82)"/>
+                <polygon points="37.2 73.85 23.95 24.18 73.01 37.59 50.2 46.43 37.2 73.85"/>
+                <text transform="translate(98.79 59.84)" data-text="etheris">etheris</text>
+            </svg>
+        </a>
+        <button class="nav-trigger">
+            <div class="navTrigger" data-toggle="collapse" data-target="#responsive-menu">
+                <i></i><i></i><i></i>
+            </div>
+        </button>
+        <span class="ops-trigger">
+            <span class="ops-trigger__icon"></span>
+        </span>
+        <div class="header-content animated">
+            <div class="clearfix">
+                <div class="col-md-2 header__btn">
+                    <a href="#!" class="btn btn-small btn-blue" data-toggle="modal" data-target="#sendFunds">Send</a>
+                </div>
+                <div class="col-md-2 header__btn">
+                    <a href="#!" class="btn btn-small btn-dark-blue" data-toggle="modal" data-target="#receiveFunds">Receive</a>
+                </div>
+                <div class="col-md-3 header__balance">
+                    <div>Balance</div>
+                    <div class="header__balance-value">0.00 Ether</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess2" placeholder="Search" />
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="col-md-2 select-lang drop-list">
+                    <div class="dropdown">
+                        <button class="btn btn-transparent-white dropdown-toggle" type="button" data-toggle="dropdown"><i class="flag-icon flag-icon-en"></i>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#!"><i class="flag-icon flag-icon-en"></i></a></li>
+                            <li><a href="#!"><i class="flag-icon flag-icon-ru"></i></a></a></li>
+                            <li><a href="#!"><i class="flag-icon flag-icon-de"></i></a></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End header -->
+
+    <!-- Start side-nav -->
+    <div class="side-nav">
+        <a href="#!" class="logo logo-svg-wrap">
+            <svg class="logo-svg" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 323.95 74.98">
+                <rect x="8.25" y="61.6" width="52" height="52" rx="2.59" ry="2.59" transform="translate(74.92 -48.38) rotate(45)"/>
+                <path d="M34.31,51.5l13,43.64a.85.85,0,0,1-1,1l-48-9L21.13,74Z" transform="translate(2.95 -49.82)"/>
+                <polygon points="37.2 73.85 23.95 24.18 73.01 37.59 50.2 46.43 37.2 73.85"/>
+                <text transform="translate(98.79 59.84)" data-text="etheris">etheris</text>
+            </svg>
+        </a>
+        <nav>
+            <ul>
+                <li class="active"><a href="account-wallet.html">
+                    <span><i class="fa fa-qrcode"></i></span>
+                    <span>Wallets</span>
+                </a></li>
+                <li><a href="account-account.html">
+                    <span><i class="fa fa-cog"></i></span>
+                    <span>Account</span>
+                </a></li>
+                <li><a href="account-api-store.html">
+                    <span><i class="fa fa-shopping-cart"></i></span>
+                    <span>Api/Store</span>
+                </a></li>
+                <li><a href="account-security.html">
+                    <span><i class="fa fa-shield"></i></span>
+                    <span>Security</span>
+                </a></li>
+                <li><a href="#!">
+                    <span><i class="fa fa-file-code-o"></i></span>
+                    <span>Contracts</span>
+                </a></li>
+                <li><a href="account-support.html">
+                    <span><i class="fa fa-life-ring"></i></span>
+                    <span>Support</span>
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- End side-nav -->
+
+    <!-- Start main-content -->
+    <div class="main-content">
+        <!-- Start content-header -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="account-checker drop-checker">
+                            <div class="dropdown">
+                                <button class="btn btn-transparent-white dropdown-toggle truncate" type="button" data-toggle="dropdown">
+                                <span>Main account (ETHERBASE)</span>
+                                <span class="caret"></span>
+                                <div class="account-checker__key truncate"><i class="fa fa-key"></i>0x3305674797659e1E351641600808543c36A4625d</div>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#!">
+                                            <span class="truncate">Account 2</span>
+                                            <div class="account-checker__key truncate"><i class="fa fa-key"></i>0x222222222222222222222222222222222222222</div>
+                                        </a>
+                                        <button class="account-checker__trash-link"><i class="fa fa-trash"></i></button>
+                                    </li>
+                                    <li><a href="#!">
+                                            <span class="truncate">Main account (ETHERBASE)</span>
+                                            <div class="account-checker__key truncate"><i class="fa fa-key"></i>0x3305674797659e1E351641600808543c36A4625d</div>
+                                        </a>
+                                        <button class="account-checker__trash-link"><i class="fa fa-trash"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="account-checker-descr">Accounts are password protected keys that can hold Ether and Ethereum-based tokens. They can control contracts, but can't display incoming transactions.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="wallet-center">
+                            <div class="content-header__btn">
+                                <a href="#!"><i class="fa fw fa-refresh"></i></a>
+                            </div>
+                            <div class="wallet-center__title">Wallet balance</div>
+                            <div class="wallet-center__value">0.000318<span>Ether</span></div>
+                            <div class="wallet-center__vallet wallet-checker drop-checker">
+                                <div class="dropdown">
+                                    <button class="btn btn-transparent-white dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <span>Usd</span>
+                                        <span class="wallet__value-new">0.00</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#!">
+                                            <span>Usd</span>
+                                            <span class="wallet__value">0.00</span>
+                                        </a></li>
+                                        <li><a href="#!">
+                                            <span>Btc</span>
+                                            <span class="wallet__value">0.000001</span>
+                                        </a></li>
+                                        <li><a href="#!">
+                                            <span>Eur</span>
+                                            <span class="wallet__value">2.00</span>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+<!--                             <div class="select-balance-wrap">
+                                <select class="selectpicker select-balance">
+                                    <option value="USD">Usd 20</option>
+                                    <option value="BTC">btc 20.00000000</option>
+                                </select>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-offset-1 col-lg-3">
+                        <div class="wallet-right">
+                            <div class="content-header__btn">
+                                <a href="#!" data-toggle="modal" data-target="#editWallet"><i class="fa fw fa-cog"></i></a>
+                                <a href="#!"><i class="fa fw fa-sign-out"></i></a>
+                            </div>
+                            <div class="add-account__btn">
+                                <a href="#!" data-toggle="modal" data-target="#createAccount">
+                                    <span class="add-account__plus">Add account</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start content-nav -->
+            <ul class="nav nav-tabs content-navigation">
+                <li class="active"><a data-toggle="tab" href="#home">Wallet Info</a></li>
+                <li><a data-toggle="tab" href="#menu1">Transactions</a></li>
+                <li><a data-toggle="tab" href="#menu2">Wallet contracts</a></li>
+            </ul>
+            <!-- End content-nav -->
+        </div>
+        <!-- End content-header -->
+
+        <!-- Start content -->
+        <div class="content">
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <div class="clearfix">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <div class="clearfix wallet-info">
+                                <div class="col-lg-7">
+                                    <div class="wallet-info__left">
+                                        <div class="wallet-info__key truncate">0x3305674797659e1E351641600808543c36A4625d</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="copy-address">
+                                        <a href="#!" class="btn btn-blue"><i class="fa fa-copy"></i>Copy address</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="wallet-info__left">
+                                        <div class="wallet-info__qr-code">
+                                            <img src="img/qrcode.png" alt="">
+                                        </div>
+                                        <p class="wallet-info__qr-subtitle">Point a compatible mobile app to this code</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="wallet-info__right">
+                                        <div class="wallet-info__right-title">Wallet Created</div>
+                                        <div class="wallet-info__right-subtitle">Jun 12, 2017 8:21:24 PM</div>
+                                        <div class="wallet-info__right-title">Main account (ETHERBASE)</div>
+                                        <div class="wallet-info__rename">
+                                            <a href="#!" class="btn btn-small btn-blue">Rename</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <div class="transactions">
+                        <div class="transactions-present" style="display: block">
+                            <div class="wallet-title">Transaction history</div>
+                            <div class="transactions-filter">
+                                <div class="clearfix">
+                                    <div class="col-lg-10 col-lg-offset-1">
+                                        <div class="clearfix">
+                                            <div class="col-lg-4 drop-list select-account">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-transparent-white dropdown-toggle" type="button" data-toggle="dropdown">All accounts<span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#!">Main account</a></li>
+                                                        <li><a href="#!">Account 2</a></li>
+                                                        <li><a href="#!">Account 3</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="transaction-filter__btns">
+                                                    <a href="#!" class="btn btn-white active">All</a>
+                                                    <a href="#!" class="btn btn-white">Sent</a>
+                                                    <a href="#!" class="btn btn-white">Recieved</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4"> 
+                                                <div class="form-group has-feedback transaction-filter__search">
+                                                    <input type="text" class="form-control" id="inputSuccess2" placeholder="0x0.." />
+                                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transaction-list">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <a aria-expanded="true" data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-md-1">
+                                                    <div class="transaction-list__checker"></div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="transaction-list__title">June 29 2017 @ 4:55pm</div>
+                                                    <div class="transaction-list__value">Confirmed</div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="transaction-list__title">Recieved from</div>
+                                                    <div class="transaction-list__value truncate">0x3305674797659e1E351641600808543c36A4625d</div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="transaction-list__sum transaction-list__sum--plus"><span>0.002341</span> Eth</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div id="collapse1" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                <div class="row transaction-list__body">
+                                                    <div class="col-xs-6 col-sm-3">
+                                                        <div class="transaction-list__title">Transaction ID</div>
+                                                        <div class="transaction-list__value"><a href="#!">xxxxx.....xxxxx</a><i class="fa fa-external-link"></i></div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-3">
+                                                        <div class="transaction-list__title">Gas cost</div>
+                                                        <div class="transaction-list__value">0.000099 ETHER</div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-3">
+                                                        <div class="transaction-list__title">Confirmed in Block</div>
+                                                        <div class="transaction-list__value">#151637</div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-3 transaction-list-green">
+                                                        <div class="transaction-list__title">Amount, USD</div>
+                                                        <div class="transaction-list__value">124.13</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-md-1">
+                                                    <div class="transaction-list__checker"></div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="transaction-list__title">June 29 2017 @ 4:55pm</div>
+                                                    <div class="transaction-list__value">Confirmed</div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="transaction-list__title">Recieved from</div>
+                                                    <div class="transaction-list__value truncate">0x3305674797659e1E351641600808543c36A4625d</div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="transaction-list__sum transaction-list__sum--plus"><span>0.002341</span> Eth</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div id="collapse2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="row transaction-list__body">
+                                                    <div class="col-xs-6 col-sm-3">
+                                                        <div class="transaction-list__title">Transaction ID</div>
+                                                        <div class="transaction-list__value"><a href="#!">xxxxx.....xxxxx</a><i class="fa fa-external-link"></i></div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-3">
+                                                        <div class="transaction-list__title">Gas cost</div>
+                                                        <div class="transaction-list__value">0.000099 ETHER</div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-3">
+                                                        <div class="transaction-list__title">Confirmed in Block</div>
+                                                        <div class="transaction-list__value">#151637</div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-3 transaction-list-green">
+                                                        <div class="transaction-list__title">Amount, USD</div>
+                                                        <div class="transaction-list__value">124.13</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-md-1">
+                                                    <div class="transaction-list__checker"></div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="transaction-list__title">June 29 2017 @ 4:55pm</div>
+                                                    <div class="transaction-list__value">Confirmed</div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="transaction-list__title">Recieved from</div>
+                                                    <div class="transaction-list__value truncate">0x3305674797659e1E351641600808543c36A4625d</div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="transaction-list__sum transaction-list__sum--plus"><span>0.002341</span> Eth</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div id="collapse3" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="row transaction-list__body">
+                                                    <div class="col-xs-6 col-sm-3">
+                                                        <div class="transaction-list__title">Transaction ID</div>
+                                                        <div class="transaction-list__value"><a href="#!">xxxxx.....xxxxx</a><i class="fa fa-external-link"></i></div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-3">
+                                                        <div class="transaction-list__title">Gas cost</div>
+                                                        <div class="transaction-list__value">0.000099 ETHER</div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-3">
+                                                        <div class="transaction-list__title">Confirmed in Block</div>
+                                                        <div class="transaction-list__value">#151637</div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-3 transaction-list-green">
+                                                        <div class="transaction-list__title">Amount, USD</div>
+                                                        <div class="transaction-list__value">124.13</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transaction-pagination">
+                                <ul class="pagination blog-pagination">
+                                    <li class="blog-pagination__first-link"><a href="#!"><i class="fa fa-angle-left"></i></a></li>
+                                    <li class="active"><a href="#!">1</a></li>
+                                    <li><a href="#!">2</a></li>
+                                    <li><a href="#!">3</a></li>
+                                    <li class="pag-ellipsis"><a href="#!">...</a></li>
+                                    <li><a href="#!"><i class="fa fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="transactions-absent" style="display: block">
+                            <div class="wallet-title">No Transactions yet</div>
+                            <div class="no-transactions">
+                                <p>Accounts can't display incoming transactions, but can receive, hold and send Ether</p>
+                                <p>To see incoming transactions, <a href="#!" class="">create a wallet contract</a> to store Ether.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <div class="wallet-contracts">
+                        <div class="wallet-title">Wallet contracts</div>
+                        <div class="clearfix">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <p>Once you have more than 1 Ether you can create more sophisticated contracts. Wallets are smart contracts that allow your funds to be controlled by multiple accounts. They can have an optional daily limit on withdrawals to increase security. Create your own custom contracts on the Contracts tab</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End content -->
+    </div>
+    <!-- End main-content -->
+
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/selectpicker/js/bootstrap-select.min.js"></script>
+    <script src="libs/bootstrap-slider/js/bootstrap-slider.min.js"></script>
+    <script src="libs/ladda/js/spin.min.js"></script>
+    <script src="libs/ladda/js/ladda.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>

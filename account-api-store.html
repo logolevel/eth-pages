@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blockether</title>
+
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500i" rel="stylesheet">
+    <link href="libs/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="libs/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="libs/checkbox-style/build.css" rel="stylesheet">
+    <link href="libs/selectpicker/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="libs/bootstrap-slider/css/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Start hidden blocks -->
+
+    <!-- Start Send Funds -->
+    <div id="sendFunds" class="modal fade modal-send" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-life-ring"></i>Send Funds</h4>
+                </div>
+                <form action="#!">
+                    <div class="modal-body">
+                        <div class="form-group input-white">
+                            <label for="sendFunds1">From</label>
+                            <input type="text" id="sendFunds1" class="form-control" value="My account (ETHERBASE)">
+                        </div>
+                        <div class="form-group input-white">
+                            <label for="sendFunds2">To</label>
+                            <input type="text" id="sendFunds2" class="form-control" placeholder="0x0000000...">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group input-white">
+                                    <label for="sendFunds3">Amount</label>
+                                    <input type="text" id="sendFunds3" class="form-control" placeholder="0.00">
+                                </div>
+                                <div class="checkbox checkbox-primary">
+                                    <input type="checkbox" id="radio-1" value="option-1" checked>
+                                    <label for="radio-1">Send everything</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="amount-description">You want to send <span>0 Ether</span></div>
+                            </div>
+                        </div>
+                        <div class="row fee-wrap">
+                            <div class="col-sm-6">
+                                <div class="fee-title">Select fee</div>
+                                <div class="fee">
+                                    <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="2" data-slider-step="1" data-slider-value="1"/>
+                                    <div class="clearfix">
+                                        <label class="slider-label">Cheaper</label>
+                                        <label class="slider-label slider-label--right">Faster</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="fee-description">This is the most amount of money that might be used to process this transaction. Your transaction will be mined in a <span>few minutes or more</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body-fluid">
+                        <div class="modal-body-content">
+                            <div class="send-total">
+                                <div class="send-total__title">Total</div>
+                                <div class="send-total__value">0.000147007 <span>Ether</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-blue" data-dismiss="modal">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Send Funds -->
+
+    <!-- Start Receive Funds -->
+    <div id="receiveFunds" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-arrow-circle-up"></i>Receive Funds</h4>
+                </div>
+                <form action="#!">
+                    <div class="modal-body">
+                        <div class="input-group-label">Amount, ETH</div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group input-white">
+                                    <input type="text" id="ticket1" class="form-control" value="1">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group input-white select-wallet">
+                                    <select class="selectpicker">
+                                        <option>USD 250</option>
+                                        <option>USD 520</option>
+                                        <option>USD 320</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-checker--white drop-checker">
+                            <div class="dropdown">
+                                <button class="btn btn-transparent-white dropdown-toggle" type="button" data-toggle="dropdown">
+                                <span>Main account (ETHERBASE)</span>
+                                <span class="caret"></span>
+                                <div class="account-checker__key truncate"><i class="fa fa-key"></i>0x3305674797659e1E351641600808543c36A4625d</div>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#!">
+                                        <span>Account 2</span>
+                                        <div class="account-checker__key truncate"><i class="fa fa-key"></i>0x222222222222222222222222222222222222222</div>
+                                    </a></li>
+                                    <li><a href="#!">
+                                        <span>Main account (ETHERBASE)</span>
+                                        <div class="account-checker__key truncate"><i class="fa fa-key"></i>0x3305674797659e1E351641600808543c36A4625d</div>
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="wallet-info__key wallet-info__key--with-icon truncate">
+                            <span>0x3305674797659e1E351641600808543c36A4625d</span>
+                            <a href="#!"><i class="fa fa-copy"></i></a>
+                        </div>
+                        <div class="view-qr__btn">
+                            <a href="#!">View QR code</a>
+                        </div>
+                        <div class="wallet-info__qr-code wallet-info__qr-code--receive">
+                            <img src="img/qrcode.png" alt="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-blue" data-dismiss="modal">Receive</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Receive Funds -->
+
+    
+    <!-- Start Add New Store -->
+    <div id="addNewStore" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-life-ring"></i>Add store</h4>
+                </div>
+                <form action="#!">
+                    <div class="modal-body">
+                        <div class="form-group input-white">
+                            <label for="store1">Store Name</label>
+                            <input type="text" id="store1" class="form-control">
+                        </div>
+                        <div class="form-group input-white">
+                            <label for="store2">Store's IP</label>
+                            <input type="text" id="store2" class="form-control" placeholder="000.000.000.000">
+                        </div>
+                    </div>
+                    <div class="modal-body-fluid">
+                        <div class="modal-body-content">
+                            <div>Rights</div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="checkbox checkbox-primary">
+                                        <input type="checkbox" id="radio-5" value="option-5" checked>
+                                        <label for="radio-5">Creating accounts</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="checkbox checkbox-primary">
+                                        <input type="checkbox" id="radio-2" value="option-2">
+                                        <label for="radio-2">Creating accounts</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="checkbox checkbox-primary">
+                                        <input type="checkbox" id="radio-3" value="option-3">
+                                        <label for="radio-3">Account information</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="checkbox checkbox-primary">
+                                        <input type="checkbox" id="radio-4" value="option-4">
+                                        <label for="radio-4">Creating accounts</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group-label">Return success page</div>
+                        <div class="input-group input-white">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <select class="selectpicker">
+                                    <option>POST</option>
+                                    <option>GET</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group-label">Return success page</div>
+                        <div class="input-group input-white">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <select class="selectpicker">
+                                    <option>POST</option>
+                                    <option>GET</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group-label">Return success page</div>
+                        <div class="input-group input-white">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <select class="selectpicker">
+                                    <option>POST</option>
+                                    <option>GET</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-blue" data-dismiss="modal">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Add New Store -->
+
+    <!-- End hidden blocks -->
+
+    <!-- Start header -->
+    <div class="header">
+        <a href="#!" class="logo">
+            <img src="img/logo.png" alt="">
+        </a>
+        <button class="nav-trigger">
+            <div class="navTrigger" data-toggle="collapse" data-target="#responsive-menu">
+                <i></i><i></i><i></i>
+            </div>
+        </button>
+        <span class="ops-trigger">
+            <span class="ops-trigger__icon"></span>
+        </span>
+        <div class="header-content animated">
+            <div class="clearfix">
+                <div class="col-md-2 header__btn">
+                    <a href="#!" class="btn btn-small btn-blue" data-toggle="modal" data-target="#sendFunds">Send</a>
+                </div>
+                <div class="col-md-2 header__btn">
+                    <a href="#!" class="btn btn-small btn-dark-blue" data-toggle="modal" data-target="#receiveFunds">Receive</a>
+                </div>
+                <div class="col-md-3 header__balance">
+                    <div>Balance</div>
+                    <div class="header__balance-value">0.00 Ether</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" id="inputSuccess2" placeholder="Search" />
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="col-md-2 select-lang drop-list">
+                    <div class="dropdown">
+                        <button class="btn btn-transparent-white dropdown-toggle" type="button" data-toggle="dropdown"><i class="flag-icon flag-icon-en"></i>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#!"><i class="flag-icon flag-icon-en"></i></a></li>
+                            <li><a href="#!"><i class="flag-icon flag-icon-ru"></i></a></a></li>
+                            <li><a href="#!"><i class="flag-icon flag-icon-de"></i></a></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End header -->
+
+    <!-- Start side-nav -->
+    <div class="side-nav">
+        <a href="!#" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="account-wallet.html">
+                    <span><i class="fa fa-qrcode"></i></span>
+                    <span>Wallets</span>
+                </a></li>
+                <li><a href="account-account.html">
+                    <span><i class="fa fa-cog"></i></span>
+                    <span>Account</span>
+                </a></li>
+                <li class="active"><a href="account-api-store.html">
+                    <span><i class="fa fa-shopping-cart"></i></span>
+                    <span>Api/Store</span>
+                </a></li>
+                <li><a href="account-security.html">
+                    <span><i class="fa fa-shield"></i></span>
+                    <span>Security</span>
+                </a></li>
+                <li><a href="#!">
+                    <span><i class="fa fa-file-code-o"></i></span>
+                    <span>Contracts</span>
+                </a></li>
+                <li><a href="account-support.html">
+                    <span><i class="fa fa-life-ring"></i></span>
+                    <span>Support</span>
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- End side-nav -->
+
+    <!-- Start main-content -->
+    <div class="main-content">
+        <!-- Start content-header -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="api-store-header">
+                    <div class="clearfix">
+                        <div class="col-lg-2">
+                            <div class="api-store-header__left">Api/Store</div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="clearfix">
+                                <div class="col-lg-6 col-lg-offset-3">
+                                    <div class="api-store-header__center">
+                                        <div class="add-account__btn" data-toggle="modal" data-target="#addNewStore">
+                                            <a href="#!"><span class="add-account__plus"></span>Add new store</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="security-content-header__right">
+                                <div class="content-header__btn">
+                                    <a href="#!"><i class="fa fw fa-cog"></i></a>
+                                    <a href="#!"><i class="fa fw fa-sign-out"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+            <!-- Start content-nav -->
+            <ul class="nav nav-tabs content-navigation">
+                <li class="active"><a data-toggle="tab" href="#home">List of connected stores</a></li>
+            </ul>
+            <!-- End content-nav -->
+        </div>
+        <!-- End content-header -->
+
+        <!-- Start content -->
+        <div class="content">
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <div class="store" style="display: block;">
+                        <div class="clearfix">
+                            <div class="col-lg-2">
+                                <div class="add-logo">
+                                    <label class="btn-add-logo">
+                                        Browse <input type="file" hidden>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-10">
+                                <div class="store-data">
+                                    <div class="clearfix">
+                                        <div class="col-lg-2 col-sm-6">
+                                            <div class="store-data__first">
+                                                <div class="store-data__title">Store name</div>
+                                                <div class="store-data__text">ABC Company</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-6">
+                                            <div class="store-data__title">Store created</div>
+                                            <div class="store-data__text">June 21,2017</div>
+                                            <div class="store-data__title">Status</div>
+                                            <div class="store-data__text active">Active</div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="checkbox checkbox-primary">
+                                                <input type="checkbox" name="radio1" id="radio1" value="option1" checked>
+                                                <label for="radio1">Account information</label>
+                                            </div>
+                                            <div class="checkbox checkbox-primary">
+                                                <input type="checkbox" name="radio1" id="radio2" value="option2">
+                                                <label for="radio2">Transactions history</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="checkbox checkbox-primary">
+                                                <input type="checkbox" name="radio2" id="radio3" value="option3" checked>
+                                                <label for="radio3">Creating accounts</label>
+                                            </div>
+                                            <div class="checkbox checkbox-primary">
+                                                <input type="checkbox" name="radio2" id="radio4" value="option4">
+                                                <label for="radio4">Sending ETHER</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-12 advanced-select drop-list">
+                                            <div class="dropdown">
+                                                <button class="btn btn-blue dropdown-toggle" type="button" data-toggle="dropdown">
+                                                    Advanced
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#!">Advanced</a></li>
+                                                    <li><a href="#!">Middle</a></li>
+                                                    <li><a href="#!">Start</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-stores" style="display: block;">
+                        <p>You have not yet connected any stores</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End content -->
+
+    </div>
+    <!-- End main-content -->
+
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/selectpicker/js/bootstrap-select.min.js"></script>
+    <script src="libs/bootstrap-slider/js/bootstrap-slider.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blockether</title>
+
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,500,500i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link href="libs/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="libs/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="libs/checkbox-style/build.css" rel="stylesheet">
+    <link href="libs/selectpicker/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="libs/owl/css/owl.carousel.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="libs/ladda/css/ladda-themeless.min.css">
+    <link href="css/site-style.css" rel="stylesheet">
+    <link href="css/site-media.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Start hidden blocks -->
+
+    <!-- Start log-in modal -->
+    <div id="logInModal" class="s-modal modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <form action="#!">
+                    <div class="modal-body">
+                    <div class="modal-title">Login to Account</div>
+                    <div class="form-group">
+                        <label for="email2">Login (Email)</label>
+                        <input type="text" class="form-control" id="email2">
+                    </div>
+                    <div class="form-group">
+                        <label for="pass2">Password</label>
+                        <input type="password" class="form-control" id="pass2">
+                    </div>
+                    <div class="remember-login">
+                        <div class="checkbox checkbox-primary">
+                            <input type="checkbox" id="radio-remember" value="option-remember" checked>
+                            <label for="radio-remember">Remember me</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="sign-up-button login-button">
+                                <button type="submit" class="btn btn-blue">Login</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="login-forgon-pass">
+                                <a href="#!">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reg-new-account"><a href="#!">Register new account</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Stop log-in modal -->
+
+    <!-- Start sign-up modal -->
+    <div id="signUpModal" class="s-modal modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <form action="#!">
+                    <div class="modal-body">
+                        <div class="modal-title">Sign Up</div>
+                        <div class="form-group">
+                            <label for="user">Username</label>
+                            <input type="text" class="form-control" id="user">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pass">Password</label>
+                                    <input type="password" class="form-control" id="pass">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pass-confirm">Confirm</label>
+                                    <input type="password" class="form-control" id="pass-confirm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sign-up-conditions">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <span>By creating an account, you agree with the <a href="#!">Terms and Conditions</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sign-up-button">
+                            <button type="submit" class="btn btn-blue">Sign Up</button>
+                        </div>
+                        <div class="have-account">Already have an account? <a href="#!">Sign In</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Stop sign-up modal -->
+
+    <!-- Stop hidden blocks -->
+
+    <!-- Start s-header -->
+    <div class="s-contacts-header">
+        <div class="container">
+            <div class="navbar s-header-navbar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <div class="navTrigger" data-toggle="collapse" data-target="#responsive-menu">
+                            <i></i><i></i><i></i>
+                        </div>
+                        <a href="#!" class="navbar-brand">
+                            <img src="img/s-logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="responsive-menu">
+                        <div class="navbar-form navbar-right s-header__sign">
+                            <a href="#!" class="btn btn-transparent" data-toggle="modal" data-target="#logInModal">Log In</a>
+                            <a href="#!" class="btn s-btn-small btn-blue" data-toggle="modal" data-target="#signUpModal">Sign up</a>
+                            <select class="selectpicker select-language">
+                                <option data-icon="flag-icon flag-icon-en">English</option>
+                                <option data-icon="flag-icon flag-icon-ru">Russian</option>
+                                <option data-icon="flag-icon flag-icon-de">Germany</option>
+                            </select>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li><a href="main.html">Start</a></li>
+                            <li><a href="#">API Docs</a></li>
+                            <li><a href="help.html">FAQ</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="s-blog-header__title">
+                <h1 class="s-blog-header__big">Contact Us</h1>
+                <h2 class="s-blog-header__subtitle">The consumer is at the heart of everything we do here at ETHERIS WALLET LTD</h2>
+            </div>
+        </div>
+    </div>
+    <!-- Stop s-header -->
+
+    <!-- Start s-contacts -->
+    <div class="s-contacts">
+        <div class="container">
+            <div class="s-contacts__wrap">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="s-contacts__form-block">
+                            <form action="#!" class="s-contacts__form">
+                                <div class="form-group">
+                                    <label for="contacts-user">Username</label>
+                                    <input type="text" class="form-control" id="contacts-user">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contacts-email">Email</label>
+                                    <input type="email" class="form-control" id="contacts-email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contacts-subject">Subject</label>
+                                    <input type="text" class="form-control" id="contacts-subject">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contacts-message">Message</label>
+                                    <textarea id="contacts-message" class="form-control"></textarea>
+                                </div>
+                                <div class="sign-up-button sign-up-button--contacts">
+                                    <button type="submit" class="btn btn-blue ladda-button" data-style="expand-left"><span class="ladda-label">Send message</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="s-contacts__description">
+                            <p>For this reason, we love to hear directly from users of our service. Whether it’s a query about our service, suggestions for improvement, or reviews about your experiences work with us, we would love to know what you think.</p>
+                            <p>We aim to get in touch with every customer as soon as we can. However, please allow up to 48 hours for us to reply.</p>
+                            <p>Thank you for using <span>ETHERIS WALLET!</span></p>
+                        </div>
+                        <div class="s-contacts__contacts">
+                            <div class="s-contacts__contacts-title">Contacts</div>
+                            <div class="s-contacts__item">
+                                <div class="s-contacts__item-title">E-mail</div>
+                                <div class="s-contacts__item-text">support@etheris.io</div>
+                            </div>
+                            <div class="s-contacts__item">
+                                <div class="s-contacts__item-title">Telegram</div>
+                                <div class="s-contacts__item-text">@etheris</div>
+                            </div>
+                            <div class="s-contacts__item">
+                                <a href="#!"><i class="fa fa-twitter"></i></a>
+                                <a href="#!"><i class="fa fa-facebook-official"></i></a>
+                                <a href="#!"><i class="fa fa-linkedin-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End s-contacts -->
+
+    <!-- Start s-section-5 -->
+    <div class="s-section-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="subscribe-btn">
+                        <a href="#!" class="btn btn-white ladda-button" data-spinner-color="#4068ff" data-style="expand-left"><span class="ladda-label">Sign up</span></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="subscribe-text">Or subscribe to our newsletter</div>
+                </div>
+                <div class="col-md-5">
+                    <form class="form-subscribe form-subscribe--big">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter email address">
+                            <span class="input-group-addon"><button type="submit" class="btn ladda-button" data-style="expand-left" data-spinner-color="#4068ff"><span class="ladda-label">Subscribe</span></button></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Stop s-section-5 -->
+
+    <!-- Start s-footer -->
+    <footer class="s-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="s-footer-left">
+                        <div class="s-footer__logo">
+                            <img src="img/s-logo.png" alt="">
+                        </div>
+                        <div class="s-footer__copyright">© 2017 | All rights reserved</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="s-footer-center">
+                        <div class="s-footer__menu">
+                            <a href="#!">Start</a>
+                            <a href="#!">API Docs</a>
+                            <a href="#!">FAQ</a>
+                            <a href="#!">Blog</a>
+                            <a href="#!">Conacts</a>
+                        </div>
+                        <div class="s-footer__support">support@blockether.io</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="s-footer__right">
+                        <div class="s-footer__lang">
+                            <select class="selectpicker select-language">
+                                <option data-icon="flag-icon flag-icon-en">English</option>
+                                <option data-icon="flag-icon flag-icon-ru">Russian</option>
+                                <option data-icon="flag-icon flag-icon-de">Germany</option>
+                            </select>
+                        </div>
+                        <div class="s-footer__social">
+                            <a href="#!"><i class="fa fa-twitter"></i></a>
+                            <a href="#!"><i class="fa fa-facebook-official"></i></a>
+                            <a href="#!"><i class="fa fa-linkedin-square"></i></a>
+                            <a href="#!"><i class="fa fa-paper-plane"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Stop s-footer -->
+
+    <!-- Start s-footer-bottom -->
+    <div class="s-footer-bottom">
+        <div class="container">
+            <p>The use of this site is subject to certain Terms of Use, which constitute a legal agreement between you and Blockether.io. By using, accessing or browsing this web site in any way, you acknowledge that you have read, understood, and agree to be bound by the Terms of Use. Please review the Terms of Use, and if you do not agree to the terms, do not use this web site. </p>
+        </div>
+    </div>
+    <!-- Stop s-footer-bottom -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/selectpicker/js/bootstrap-select.min.js"></script>
+    <script src="libs/owl/js/owl.carousel.min.js"></script>
+    <script src="libs/ladda/js/spin.min.js"></script>
+    <script src="libs/ladda/js/ladda.min.js"></script>
+    <script src="js/site-scripts.js"></script>
+
+</body>
+</html>
